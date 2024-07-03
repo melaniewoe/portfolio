@@ -1,0 +1,17 @@
+.aboutSection {
+    @apply container my-14 flex h-screen w-full flex-col justify-start space-y-10 md:flex-row bg-primary;
+
+    max-width: none; /* Override max-width of the container */
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
+.profileCanvas {
+    @apply m-5 md:mt-40 !important;
+    @media (max-width: 600px) {
+        display: none;
+        /* transform: scale(0.7) translateX(-100px) !important; */
+        /* position: absolute; */
+        /* z-index: -9999; */
+    }
+}
