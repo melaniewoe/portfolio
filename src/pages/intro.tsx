@@ -53,7 +53,7 @@ const Intro: React.FC<MyComponentProps> = ({ isScrolled, scrollYProgress }) => {
       ref={sectionRef}
       data-scroll-section
       className={cn(
-        "container mt-40 flex h-screen flex-col items-center xl:mt-0 xl:min-h-screen xl:flex-row xl:justify-between",
+        "container relative mt-40 flex h-screen flex-col items-center justify-center xl:mt-0 xl:min-h-screen xl:flex-row xl:justify-between",
         isSticky ? "sticky" : "", // Apply sticky class conditionally
         isSticky ? "top-0" : "", // Apply top-0 class conditionally
       )}
@@ -66,35 +66,17 @@ const Intro: React.FC<MyComponentProps> = ({ isScrolled, scrollYProgress }) => {
             data-scroll-speed=".06"
             data-scroll-direction="horizontal"
           >
-            <span className="text-6xl tracking-tighter text-foreground 2xl:text-8xl">
-              Melanie Woe
+            <div className="font-SpaceGrostek 2xl:text-15xl text-6xl font-bold tracking-tighter text-foreground">
+              Frontend —
               <br />
-            </span>
-            <span className="clash-grotesk text-gradient text-6xl 2xl:text-8xl">
-              Frontend Engineer.
-            </span>
+            </div>
+            <div className="plumpeto-outlined 2xl:text-15xl mt-7 text-5xl">
+              <span className="plumpeto-plumpy">E</span>
+              ngineer
+              <span className="text-gradient font-SpaceGrostek">.</span>
+            </div>
           </h1>
-          <p
-            data-scroll
-            data-scroll-enable-touch-speed
-            data-scroll-speed=".06"
-            className="mt-1 max-w-lg tracking-tight text-muted-foreground 2xl:text-xl"
-          >
-            An experienced frontend developer with a big big thanos brain.
-          </p>
         </div>
-        <span
-          data-scroll
-          data-scroll-enable-touch-speed
-          data-scroll-speed=".06"
-          className="flex flex-row items-center space-x-1.5 pt-6"
-        >
-          <Link href="mailto:melaniewoe@gmail.com" passHref>
-            <Button>
-              Get in touch <ChevronRight className="ml-1 h-4 w-4" />
-            </Button>
-          </Link>
-        </span>
 
         <div
           className={cn(styles.scroll, isScrolled && styles["scroll--hidden"])}

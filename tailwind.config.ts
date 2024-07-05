@@ -69,6 +69,14 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      fontFamily: {
+        SpaceGrostek: ["Space Grotesk", "sans-serif"],
+      },
+      fontSize: {
+        '15xl': ['11rem', {
+          // lineHeight: '2rem',
+        }],
+      }
     },
   },
   plugins: [require("tailwindcss-animate")],

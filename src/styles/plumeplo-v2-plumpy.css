@@ -1,0 +1,8 @@
+@font-face {
+  font-family: "Plumpelo V2 Plumpy";
+  src:
+    url("/fonts/PlumpeloV2Plumpy.woff2") format("woff2");
+  font-weight: normal;
+  font-display: swap;
+  font-style: normal;
+}
