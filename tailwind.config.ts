@@ -49,6 +49,10 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        gradient: {
+          primary: "hsl(var(--gradient-primary))",
+          secondary: "hsl(var(--gradient-secondary))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -71,9 +75,10 @@ const config = {
       },
       fontFamily: {
         SpaceGrostek: ["Space Grotesk", "sans-serif"],
+        Inter:["Inter", "sans-serif"],
       },
       fontSize: {
-        '15xl': ['11rem', {
+        '15xl': ['9rem', {
           // lineHeight: '2rem',
         }],
       }

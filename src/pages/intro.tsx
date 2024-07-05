@@ -1,10 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Suspense } from "react";
 import styles from "@/styles/Home.module.css";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import Spline from "@splinetool/react-spline";
-import { ChevronRight } from "lucide-react";
 import { TriangleDownIcon } from "@radix-ui/react-icons";
 import { cn } from "@/lib/utils";
 import { useTransform, MotionValue, motion } from "framer-motion";
@@ -29,6 +26,7 @@ const Intro: React.FC<MyComponentProps> = ({ isScrolled, scrollYProgress }) => {
             console.log("home sticky");
             setIsSticky(true); // Set sticky to true when section is intersecting
           } else {
+            console.log("home not sticky");
             setIsSticky(false); // Set sticky to false when section is not intersecting
           }
         });
@@ -66,11 +64,11 @@ const Intro: React.FC<MyComponentProps> = ({ isScrolled, scrollYProgress }) => {
             data-scroll-speed=".06"
             data-scroll-direction="horizontal"
           >
-            <div className="font-SpaceGrostek 2xl:text-15xl text-6xl font-bold tracking-tighter text-foreground">
+            <div className="font-SpaceGrostek text-6xl font-black tracking-tighter text-foreground 2xl:text-15xl">
               Frontend —
               <br />
             </div>
-            <div className="plumpeto-outlined 2xl:text-15xl mt-7 text-5xl">
+            <div className="plumpeto-outlined mt-2 text-5xl 2xl:text-15xl">
               <span className="plumpeto-plumpy">E</span>
               ngineer
               <span className="text-gradient font-SpaceGrostek">.</span>

@@ -1,10 +1,9 @@
-import Link from "next/link";
-import Spline from "@splinetool/react-spline";
-import { Suspense } from "react";
 import styles from "@/styles/About.module.css";
 import { useTransform, MotionValue, motion } from "framer-motion";
 import React from "react";
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import ScribbleSvg from "@/components/ScribbleSvg";
 
 const aboutStats = [
   { label: "Years of experience", value: "3+" },
@@ -21,6 +20,10 @@ const About: React.FC<MyComponentProps> = ({ scrollYProgress }) => {
   // const rotate = useTransform(scrollYProgress, [0, 1], [-5, 0]);
   const [isSticky, setIsSticky] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
+  const isMobile =
+    typeof window != "undefined"
+      ? window.matchMedia("(max-width: 768px)").matches
+      : false;
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -30,16 +33,16 @@ const About: React.FC<MyComponentProps> = ({ scrollYProgress }) => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            console.log("issticky");
+            console.log("remove sticky");
             setIsSticky(true); // Set sticky to true when section is intersecting
           } else {
-            console.log("not issticky");
+            console.log("remove not sticky");
             setIsSticky(false); // Set sticky to false when section is not intersecting
           }
         });
       },
       {
-        threshold: 0.9, // Adjust this value as needed
+        threshold: isMobile ? 0.5 : 0.8, // Adjust this value as needed
       },
     );
 
@@ -68,29 +71,51 @@ const About: React.FC<MyComponentProps> = ({ scrollYProgress }) => {
         className={styles.aboutSection}
         // style={{ scale }}
       >
-        <h2 className="py-16 pb-2 text-xl font-light leading-normal tracking-tighter text-foreground xl:text-[30px]">
-          <span className="text-gradient clash-grotesk text-xl font-semibold tracking-tighter">
-            ✨ About Me
-          </span>
-          <br />
-          I&apos;m Melanie, a frontend developer with extensive experience in
-          technologies like{" "}
-          <Link
-            href="https://create.t3.gg/"
-            target="_blank"
-            className="underline"
-          >
-            React
-          </Link>{" "}
-          . I've worked with various companies, contributing to all project
-          phases—from technical assessments and ideation to delivery. I've led
-          development efforts and collaborated with cross-functional teams.
-          <br /> <br />
-          Besides frontend work, I've also explored backend development, picking
-          up diverse skills. I&apos;m passionate about creating seamless,
-          engaging user experiences and continuously enhancing the digital
-          landscape.
-        </h2>
+        <div className="py-16 text-xl font-light leading-normal text-primary xl:text-[25px]">
+          <div className="flex flex-col items-center justify-between md:flex-row">
+            <h2>
+              <span className="Inter text-7xl font-black uppercase">About</span>
+              <br />
+              <span className="Inter mt--2.5 text-7xl font-black uppercase">
+                Me.
+              </span>
+            </h2>
+            <div>
+              <Image
+                src="/profile-pic.png"
+                alt="Profile Picture"
+                width={250}
+                height={250}
+                // layout="responsive"
+                className="relative z-10 m-5 mr-12 rounded-full"
+              />
+              <div className="fill-gradient absolute right-px top-5 z-0 w-1/3">
+                <ScribbleSvg />
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col">
+            <div className="font-medium md:mt-10 md:w-4/5">
+              Hi, I&apos;m Melanie Woe — a frontend developer with extensive
+              experience in various technologies. I've worked with various
+              companies, contributing to all project phases; from technical
+              assessments and ideation to delivery. I've led development efforts
+              and collaborated with cross-functional teams.
+            </div>
+            <br />
+            <div className="md:w-4/5 md:self-end">
+              Besides frontend work, I've also explored backend development,
+              picking up diverse skills. I&apos;m passionate about creating
+              seamless, engaging user experiences and continuously enhancing the
+              digital landscape.
+            </div>
+            <br />
+            <br />
+            <div className="text-sm font-light uppercase">
+              Currently BASED <br /> in denver, co
+            </div>
+          </div>
+        </div>
         {/* <div className="grid grid-cols-2 gap-8 xl:grid-cols-3">
           {aboutStats.map((stat) => (
             <div
@@ -106,11 +131,6 @@ const About: React.FC<MyComponentProps> = ({ scrollYProgress }) => {
             </div>
           ))}
         </div> */}
-        <div className={styles.profileCanvas}>
-          <Suspense fallback={<span>Loading...</span>}>
-            <Spline scene="https://prod.spline.design/fwZby6NV6lkUHNsy/scene.splinecode" />
-          </Suspense>
-        </div>
       </motion.div>
     </section>
   );
