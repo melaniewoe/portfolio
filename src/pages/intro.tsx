@@ -64,11 +64,11 @@ const Intro: React.FC<MyComponentProps> = ({ isScrolled, scrollYProgress }) => {
             data-scroll-speed=".06"
             data-scroll-direction="horizontal"
           >
-            <div className="font-SpaceGrostek text-6xl font-black tracking-tighter text-foreground 2xl:text-15xl">
+            <div className="font-SpaceGrostek text-6xl font-black tracking-tighter text-foreground xl:text-15xl">
               Frontend —
               <br />
             </div>
-            <div className="plumpeto-outlined mt-2 text-5xl 2xl:text-15xl">
+            <div className="plumpeto-outlined mt-2 text-5xl xl:text-15xl">
               <span className="plumpeto-plumpy">E</span>
               ngineer
               <span className="text-gradient font-SpaceGrostek">.</span>

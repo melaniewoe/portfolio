@@ -1,3 +1,40 @@
 .pill {
     @apply transition border border-input bg-background flex items-center text-xs px-2.5 py-1.5 rounded-full hover:-translate-y-1 hover:bg-primary hover:text-primary-foreground duration-300;
-}
+  }
+  
+  .experience {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px 50px;
+    border-top: 1px solid rgb(201, 201, 201);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .experience:last-of-type {
+    border-bottom: 1px solid rgb(201, 201, 201);
+  }
+  
+  .experience:hover {
+    opacity: 0.5;
+  }
+  
+  .experience:hover h2 {
+    transform: translateX(-10px);
+  }
+  
+  .experience:hover p {
+    transform: translateX(10px);
+  }
+  
+  .experience h2 {
+    transition: all 0.4s;
+  }
+  
+  .experience p {
+    transition: all 0.4s;
+    font-weight: 300;
+  }
+  

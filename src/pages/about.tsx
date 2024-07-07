@@ -42,7 +42,7 @@ const About: React.FC<MyComponentProps> = ({ scrollYProgress }) => {
         });
       },
       {
-        threshold: isMobile ? 0.5 : 0.8, // Adjust this value as needed
+        threshold: isMobile ? 0.5 : 0.7, // Adjust this value as needed
       },
     );
 
@@ -73,7 +73,12 @@ const About: React.FC<MyComponentProps> = ({ scrollYProgress }) => {
       >
         <div className="py-16 text-xl font-light leading-normal text-primary xl:text-[25px]">
           <div className="flex flex-col items-center justify-between md:flex-row">
-            <h2>
+            <h2
+              data-scroll
+              data-scroll-enable-touch-speed
+              data-scroll-speed=".06"
+              data-scroll-direction="horizontal"
+            >
               <span className="Inter text-7xl font-black uppercase">About</span>
               <br />
               <span className="Inter mt--2.5 text-7xl font-black uppercase">
@@ -111,7 +116,7 @@ const About: React.FC<MyComponentProps> = ({ scrollYProgress }) => {
             </div>
             <br />
             <br />
-            <div className="text-sm font-light uppercase">
+            <div className="bottom-0 left-0 text-sm font-light uppercase">
               Currently BASED <br /> in denver, co
             </div>
           </div>
