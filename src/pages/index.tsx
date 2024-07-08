@@ -75,13 +75,13 @@ export default function Home() {
         <Experience />
 
         {/* Projects */}
-        <Projects />
+        {/* <Projects /> */}
 
         {/* Services */}
-        <Services />
+        {/* <Services /> */}
 
         {/* Contact */}
-        <Contact />
+        {/* <Contact /> */}
       </div>
     </Container>
   );

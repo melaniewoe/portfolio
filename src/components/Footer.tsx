@@ -1,35 +1,82 @@
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { useState, useEffect } from "react";
-import { MailIcon } from "lucide-react";
+interface ArrowSvgProps {
+  className?: string;
+}
+
+const ArrowSvg: React.FC<ArrowSvgProps> = ({ className }) => {
+  return (
+    <svg
+      className={className}
+      width="20"
+      height="20"
+      viewBox="0 0 14 14"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M9.94922 10.2192V4.44453H4.17451"
+        stroke="currentColor"
+        strokeWidth="0.583333"
+        strokeMiterlimit="10"
+      ></path>
+      <path
+        d="M9.9481 4.44301L3.89062 10.5005"
+        stroke="currentColor"
+        strokeWidth="0.583333"
+        strokeMiterlimit="10"
+      ></path>
+    </svg>
+  );
+};
 
 export default function Footer() {
-  // get the current time in UTC+1 time zone
-  const [time, setTime] = useState<string>("");
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const date = new Date();
-      date.setHours(date.getHours());
-      setTime(
-        date.toLocaleTimeString("en-US", {
-          hour12: true,
-          hour: "numeric",
-          minute: "numeric",
-        }),
-      );
-    }, 1000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <footer className="w-full bg-gradient-to-t from-primary/[1%] to-transparent">
-      <div className="container mx-auto flex flex-row items-center justify-between py-6">
-        <span className="flex flex-row items-center space-x-4">
-          <p className="text-xs text-muted-foreground">Made with ❤️ </p>
-        </span>{" "}
+    <footer className="relative h-[800px] w-full bg-secondary">
+      <div
+        className="relative h-[800px]"
+        style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
+      >
+        <div className="Inter fixed bottom-0 flex h-[800px] w-full flex-col justify-center justify-between p-14 text-primary md:p-28 md:pb-20">
+          <hr className="my-4 w-full sm:my-6" />
+          <h2 className="Inter text-6xl font-bold capitalize tracking-tighter xl:text-15xl">
+            Want to <br /> reach <span className="italic">out?</span>
+          </h2>
+          <div className="align flex flex-col md:flex-row md:items-end md:justify-between">
+            <div className="flex flex-col">
+              <a
+                className="group flex flex-row items-center uppercase"
+                target="_blank"
+                href="https://www.linkedin.com/in/melaniewoe"
+              >
+                linkedin{" "}
+                <ArrowSvg className="transform transition-transform duration-300 group-hover:translate-x-2" />
+              </a>
+              <a
+                className="group flex flex-row items-center uppercase"
+                target="_blank"
+                href="https://github.com/melaniewoe"
+              >
+                github{" "}
+                <ArrowSvg className="transform transition-transform duration-300 group-hover:translate-x-2" />
+              </a>
+              <a
+                className="group flex flex-row items-center uppercase"
+                href="mailto:melaniewoe@gmail.com"
+              >
+                melaniewoe@gmail.com{" "}
+                <ArrowSvg className="transform transition-transform duration-300 group-hover:translate-x-2" />
+              </a>
+              <br />
+            </div>
+            <div className="items-end md:text-right">
+              <div className="uppercase">
+                <p>designed</p> <p>and</p>
+                <p>developed</p> by melanie woe.
+              </div>
+              <div className="font-thin">© 2024 Melanie Woe</div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div className="h-1 bg-[radial-gradient(closest-side,#8486ff,#42357d,#5d83ff,transparent)] opacity-50" />
     </footer>
   );
 }
