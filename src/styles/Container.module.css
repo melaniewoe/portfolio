@@ -34,7 +34,7 @@
   justify-content: center;
   position: fixed;
   z-index: 99;
-  background-color: hsl(240 27.9% 5.7%);
+  background-color: hsl(255, 85%, 43%);
 
   svg{
     position: absolute;
@@ -43,13 +43,13 @@
     height: calc(100% + 300px);
 
     path{
-      fill: hsl(240 27.9% 5.7%);
+      fill: hsl(45, 18%, 82%);
     }
   }
 
   p{
     display: flex;
-    color: white;
+    color: hsl(0 6% 7%);
     font-size: 42px;
     align-items: center;
     position: absolute;
@@ -59,7 +59,7 @@
       display: block;
       width: 10px;
       height: 10px;
-      background-color: white;
+      background-color: hsl(0 6% 7%);
       border-radius: 50%;
       margin-right: 10px;
     }

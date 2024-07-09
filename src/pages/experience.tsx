@@ -122,7 +122,7 @@ const Experience: React.FC = () => {
         <div className="grid items-center gap-1.5">
           <div className="flex flex-col py-6 xl:p-6">
             <h2 className="Inter text-4xl font-black uppercase md:text-7xl">
-              Experience.
+              Experience<span className="text-gradient">.</span>
             </h2>
           </div>
         </div>

@@ -1,13 +1,13 @@
 
 /* hero */
 .intro {
-    @apply flex flex-col items-center space-y-4 w-full;
+    @apply flex flex-col md:flex-row items-center space-y-4 w-full xl:justify-between;
 }
 /* .pill {
     @apply transition border border-input bg-background flex items-center text-xs px-2.5 py-1.5 rounded-full hover:-translate-y-1 hover:bg-primary hover:text-primary-foreground duration-300;
 } */
 .intro h1 {
-    @apply pt-2 leading-tight;
+    @apply leading-tight;
 }
 
 /* scroll down */
@@ -27,7 +27,7 @@
 #canvas-container
 {
     /* xl:w-[690px]  */
-    @apply bg-background min-h-[515px] xl:min-w-[690px] overflow-hidden items-end absolute;
+    @apply bg-background min-h-[515px] xl:min-w-[690px] overflow-hidden items-center absolute;
     z-index: -99999;
 
     /* this fixes the overflow:hidden in Chrome/Opera */

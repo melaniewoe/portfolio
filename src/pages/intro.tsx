@@ -51,30 +51,37 @@ const Intro: React.FC<MyComponentProps> = ({ isScrolled, scrollYProgress }) => {
       ref={sectionRef}
       data-scroll-section
       className={cn(
-        "container relative mt-40 flex h-screen flex-col items-center justify-center xl:mt-0 xl:min-h-screen xl:flex-row xl:justify-between",
+        "container relative mt-40 flex h-screen flex-col items-center justify-between xl:mt-0 xl:min-h-screen xl:flex-row xl:justify-between",
         isSticky ? "sticky" : "", // Apply sticky class conditionally
         isSticky ? "top-0" : "", // Apply top-0 class conditionally
       )}
     >
-      <motion.div className={styles.intro} style={{ scale }}>
-        <div>
-          <h1
-            data-scroll
-            data-scroll-enable-touch-speed
-            data-scroll-speed=".06"
-            data-scroll-direction="horizontal"
-          >
-            <div className="font-SpaceGrostek text-6xl font-black tracking-tighter text-foreground xl:text-15xl">
-              Frontend —
-              <br />
-            </div>
-            <div className="plumpeto-outlined mt-2 text-5xl xl:text-15xl">
-              <span className="plumpeto-plumpy">E</span>
-              ngineer
-              <span className="text-gradient font-SpaceGrostek">.</span>
-            </div>
-          </h1>
-        </div>
+      <motion.div
+        className={cn(styles.intro, "w-full xl:w-auto xl:flex-grow")}
+        style={{ scale }}
+      >
+        <h1
+          data-scroll
+          data-scroll-enable-touch-speed
+          data-scroll-speed=".06"
+          data-scroll-direction="horizontal"
+        >
+          <span className="aalto-opentype text-8xl uppercase text-foreground xl:text-15xl">
+            Frontend
+          </span>
+        </h1>
+        <h1
+          data-scroll
+          data-scroll-enable-touch-speed
+          data-scroll-speed=".06"
+          data-scroll-direction="horizontal"
+        >
+          <span className="aalto-opentype text-8xl uppercase xl:text-15xl">
+            {" "}
+            <span className="aalto-opentype">Engineer</span>
+            <span className="text-gradient font-SpaceGrostek">.</span>
+          </span>
+        </h1>
 
         <div
           className={cn(styles.scroll, isScrolled && styles["scroll--hidden"])}
@@ -87,10 +94,11 @@ const Intro: React.FC<MyComponentProps> = ({ isScrolled, scrollYProgress }) => {
         data-scroll
         data-scroll-speed="-.01"
         id={styles["canvas-container"]}
-        className="mt-14 h-full w-full xl:mt-0"
+        className="absolute right-5 top-0 h-full w-full"
       >
         <Suspense fallback={<span>Loading...</span>}>
-          <Spline scene="https://prod.spline.design/RaVIl9YcreC8uTno/scene.splinecode" />
+          {/* <Spline scene="https://prod.spline.design/RaVIl9YcreC8uTno/scene.splinecode" /> */}
+          <Spline scene="https://prod.spline.design/RhfJX2UaW2aoL9Lb/scene.splinecode" />
         </Suspense>
       </div>
     </section>

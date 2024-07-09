@@ -76,9 +76,11 @@ const config = {
       fontFamily: {
         SpaceGrostek: ["Space Grotesk", "sans-serif"],
         Inter:["Inter", "sans-serif"],
+        // Aalto: ['Aalto Display', 'sans-serif'],
       },
       fontSize: {
-        '15xl': ['9rem', {
+        '9xl': ['9rem', {}],
+        '15xl': ['15rem', {
           // lineHeight: '2rem',
         }],
       }

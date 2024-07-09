@@ -82,7 +82,7 @@ const About: React.FC<MyComponentProps> = ({ scrollYProgress }) => {
               <span className="Inter text-7xl font-black uppercase">About</span>
               <br />
               <span className="Inter mt--2.5 text-7xl font-black uppercase">
-                Me.
+                Me<span className="text-gradient">.</span>
               </span>
             </h2>
             <div>
@@ -94,7 +94,7 @@ const About: React.FC<MyComponentProps> = ({ scrollYProgress }) => {
                 // layout="responsive"
                 className="relative z-10 m-5 mr-12 rounded-full"
               />
-              <div className="fill-gradient absolute right-px top-5 z-0 w-1/3">
+              <div className="fill-gradient z--99 right-px top-5 md:absolute">
                 <ScribbleSvg />
               </div>
             </div>
@@ -121,21 +121,6 @@ const About: React.FC<MyComponentProps> = ({ scrollYProgress }) => {
             </div>
           </div>
         </div>
-        {/* <div className="grid grid-cols-2 gap-8 xl:grid-cols-3">
-          {aboutStats.map((stat) => (
-            <div
-              key={stat.label}
-              className="flex flex-col items-center text-center xl:items-start xl:text-start"
-            >
-              <span className="clash-grotesk text-gradient text-4xl font-semibold tracking-tight xl:text-6xl">
-                {stat.value}
-              </span>
-              <span className="tracking-tight text-muted-foreground xl:text-lg">
-                {stat.label}
-              </span>
-            </div>
-          ))}
-        </div> */}
       </motion.div>
     </section>
   );

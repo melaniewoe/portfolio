@@ -20,9 +20,9 @@ const navLinks = [
   { href: "#home", text: "Home" },
   { href: "#about", text: "About" },
   { href: "#experience", text: "Experience" },
-  { href: "#projects", text: "Projects" },
-  { href: "#services", text: "Services" },
-  { href: "#contact", text: "Contact" },
+  // { href: "#projects", text: "Projects" },
+  // { href: "#services", text: "Services" },
+  // { href: "#contact", text: "Contact" },
 ];
 
 const variants = {

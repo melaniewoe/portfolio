@@ -4,6 +4,7 @@ import { useScroll } from "framer-motion";
 
 import Intro from "./intro";
 import About from "./about";
+import Skills from "./skills";
 import Contact from "./contact";
 import Services from "./services";
 import Projects from "./projects";
@@ -70,6 +71,9 @@ export default function Home() {
 
         {/* About */}
         <About scrollYProgress={scrollYProgress} />
+
+        {/* Skills */}
+        <Skills />
 
         {/* Experience */}
         <Experience />

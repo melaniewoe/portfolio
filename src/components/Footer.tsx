@@ -37,7 +37,7 @@ export default function Footer() {
       >
         <div className="Inter fixed bottom-0 flex h-[800px] w-full flex-col justify-center justify-between p-14 text-primary md:p-28 md:pb-20">
           <hr className="my-4 w-full sm:my-6" />
-          <h2 className="Inter text-6xl font-bold capitalize tracking-tighter xl:text-15xl">
+          <h2 className="Inter text-6xl font-bold capitalize tracking-tighter xl:text-9xl">
             Want to <br /> reach <span className="italic">out?</span>
           </h2>
           <div className="align flex flex-col md:flex-row md:items-end md:justify-between">
