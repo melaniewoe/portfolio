@@ -5,14 +5,13 @@ import { useScroll, useTransform, motion, MotionValue } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 
 interface SlideProps {
-  src: StaticImageData;
   direction: "left" | "right";
   left: string;
   progress: MotionValue<number>;
 }
 
 interface PhraseProps {
-  src: StaticImageData;
+  // src: StaticImageData;
 }
 
 const Skills: React.FC = () => {
@@ -35,7 +34,7 @@ const Skills: React.FC = () => {
   );
 };
 
-const Slide: React.FC<SlideProps> = ({ src, direction, left, progress }) => {
+const Slide: React.FC<SlideProps> = ({ direction, left, progress }) => {
   const directionMultiplier = direction === "left" ? -1 : 1;
   const translateX = useTransform(
     progress,
@@ -48,10 +47,10 @@ const Slide: React.FC<SlideProps> = ({ src, direction, left, progress }) => {
       style={{ x: translateX, left }}
       className="relative flex whitespace-nowrap"
     >
-      <Phrase src={src} />
-      <Phrase2 src={src} />
-      <Phrase3 src={src} />
-      <Phrase4 src={src} />
+      <Phrase />
+      <Phrase2 />
+      <Phrase3 />
+      <Phrase4 />
     </motion.div>
   );
 };

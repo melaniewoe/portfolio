@@ -117,7 +117,7 @@ const About: React.FC<MyComponentProps> = ({ scrollYProgress }) => {
             <br />
             <br />
             <div className="bottom-0 left-0 text-sm font-light uppercase">
-              Currently BASED <br /> in denver, co
+              [Currently BASED <br /> in denver, co]
             </div>
           </div>
         </div>

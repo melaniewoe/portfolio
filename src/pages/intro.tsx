@@ -23,10 +23,8 @@ const Intro: React.FC<MyComponentProps> = ({ isScrolled, scrollYProgress }) => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            console.log("home sticky");
             setIsSticky(true); // Set sticky to true when section is intersecting
           } else {
-            console.log("home not sticky");
             setIsSticky(false); // Set sticky to false when section is not intersecting
           }
         });
@@ -50,8 +48,9 @@ const Intro: React.FC<MyComponentProps> = ({ isScrolled, scrollYProgress }) => {
       id="home"
       ref={sectionRef}
       data-scroll-section
+      // add container for blob
       className={cn(
-        "container relative mt-40 flex h-screen flex-col items-center justify-between xl:mt-0 xl:min-h-screen xl:flex-row xl:justify-between",
+        "relative mt-40 flex h-screen flex-col items-center justify-between xl:mt-0 xl:min-h-screen xl:flex-col",
         isSticky ? "sticky" : "", // Apply sticky class conditionally
         isSticky ? "top-0" : "", // Apply top-0 class conditionally
       )}
@@ -60,6 +59,11 @@ const Intro: React.FC<MyComponentProps> = ({ isScrolled, scrollYProgress }) => {
         className={cn(styles.intro, "w-full xl:w-auto xl:flex-grow")}
         style={{ scale }}
       >
+        <div className="container flex w-full justify-between font-extralight">
+          <h2>[PORTFOLIO]</h2>
+          <h2 className="font-bold uppercase">[Melanie Woe]</h2>
+          <h2>[2024]</h2>
+        </div>
         <h1
           data-scroll
           data-scroll-enable-touch-speed
@@ -69,20 +73,18 @@ const Intro: React.FC<MyComponentProps> = ({ isScrolled, scrollYProgress }) => {
           <span className="aalto-opentype text-8xl uppercase text-foreground xl:text-15xl">
             Frontend
           </span>
-        </h1>
-        <h1
-          data-scroll
-          data-scroll-enable-touch-speed
-          data-scroll-speed=".06"
-          data-scroll-direction="horizontal"
-        >
           <span className="aalto-opentype text-8xl uppercase xl:text-15xl">
             {" "}
             <span className="aalto-opentype">Engineer</span>
             <span className="text-gradient font-SpaceGrostek">.</span>
           </span>
         </h1>
-
+        <div className="font-semibold">
+          <h2>
+            turning coffee into code and code into <span>awesome</span>{" "}
+            websites.
+          </h2>
+        </div>
         <div
           className={cn(styles.scroll, isScrolled && styles["scroll--hidden"])}
         >
@@ -90,17 +92,17 @@ const Intro: React.FC<MyComponentProps> = ({ isScrolled, scrollYProgress }) => {
           <TriangleDownIcon className="mt-1 animate-bounce" />
         </div>
       </motion.div>
-      <div
+      <motion.div
         data-scroll
         data-scroll-speed="-.01"
         id={styles["canvas-container"]}
         className="absolute right-5 top-0 h-full w-full"
+        style={{ scale }}
       >
         <Suspense fallback={<span>Loading...</span>}>
-          {/* <Spline scene="https://prod.spline.design/RaVIl9YcreC8uTno/scene.splinecode" /> */}
-          <Spline scene="https://prod.spline.design/RhfJX2UaW2aoL9Lb/scene.splinecode" />
+          <Spline scene="/assets/intro_blob.spline" />
         </Suspense>
-      </div>
+      </motion.div>
     </section>
   );
 };

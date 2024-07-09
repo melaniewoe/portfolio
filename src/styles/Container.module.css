@@ -34,7 +34,7 @@
   justify-content: center;
   position: fixed;
   z-index: 99;
-  background-color: hsl(255, 85%, 43%);
+  background-color: hsl(45, 18%, 82%);
 
   svg{
     position: absolute;
