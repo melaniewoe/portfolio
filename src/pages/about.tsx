@@ -18,49 +18,49 @@ interface MyComponentProps {
 const About: React.FC<MyComponentProps> = ({ scrollYProgress }) => {
   // const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
   // const rotate = useTransform(scrollYProgress, [0, 1], [-5, 0]);
-  const [isSticky, setIsSticky] = useState(false);
+  // const [isSticky, setIsSticky] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
-  const isMobile =
-    typeof window != "undefined"
-      ? window.matchMedia("(max-width: 768px)").matches
-      : false;
+  // const isMobile =
+  //   typeof window != "undefined"
+  //     ? window.matchMedia("(max-width: 768px)").matches
+  //     : false;
 
-  useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
+  // useEffect(() => {
+  //   const section = sectionRef.current;
+  //   if (!section) return;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            console.log("remove sticky");
-            setIsSticky(true); // Set sticky to true when section is intersecting
-          } else {
-            console.log("remove not sticky");
-            setIsSticky(false); // Set sticky to false when section is not intersecting
-          }
-        });
-      },
-      {
-        threshold: isMobile ? 0.5 : 0.7, // Adjust this value as needed
-      },
-    );
+  //   const observer = new IntersectionObserver(
+  //     (entries) => {
+  //       entries.forEach((entry) => {
+  //         if (entry.isIntersecting) {
+  //           console.log("remove sticky");
+  //           setIsSticky(true); // Set sticky to true when section is intersecting
+  //         } else {
+  //           console.log("remove not sticky");
+  //           setIsSticky(false); // Set sticky to false when section is not intersecting
+  //         }
+  //       });
+  //     },
+  //     {
+  //       threshold: isMobile ? 0.5 : 0.7, // Adjust this value as needed
+  //     },
+  //   );
 
-    observer.observe(section);
+  //   observer.observe(section);
 
-    return () => {
-      observer.unobserve(section);
-    };
-  }, []);
+  //   return () => {
+  //     observer.unobserve(section);
+  //   };
+  // }, []);
 
-  useEffect(() => {
-    const element = document.getElementById("home");
-    if (element && isSticky) {
-      element.classList.remove("sticky", "top-0");
-    }
-  }, [isSticky]);
+  // useEffect(() => {
+  //   const element = document.getElementById("home");
+  //   if (element && isSticky) {
+  //     element.classList.remove("sticky", "top-0");
+  //   }
+  // }, [isSticky]);
 
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.2]);
+  // const scale = useTransform(scrollYProgress, [0, 1], [1, 0.2]);
 
   return (
     <section id="about" data-scroll-section ref={sectionRef}>

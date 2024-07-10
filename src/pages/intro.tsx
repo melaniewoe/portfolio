@@ -12,34 +12,34 @@ interface MyComponentProps {
 }
 
 const Intro: React.FC<MyComponentProps> = ({ isScrolled, scrollYProgress }) => {
-  const [isSticky, setIsSticky] = useState(true);
+  // const [isSticky, setIsSticky] = useState(true);
   const sectionRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
+  // useEffect(() => {
+  //   const section = sectionRef.current;
+  //   if (!section) return;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsSticky(true); // Set sticky to true when section is intersecting
-          } else {
-            setIsSticky(false); // Set sticky to false when section is not intersecting
-          }
-        });
-      },
-      {
-        threshold: 0.1, // Adjust this value as needed
-      },
-    );
+  //   const observer = new IntersectionObserver(
+  //     (entries) => {
+  //       entries.forEach((entry) => {
+  //         if (entry.isIntersecting) {
+  //           setIsSticky(true); // Set sticky to true when section is intersecting
+  //         } else {
+  //           setIsSticky(false); // Set sticky to false when section is not intersecting
+  //         }
+  //       });
+  //     },
+  //     {
+  //       threshold: 0.1, // Adjust this value as needed
+  //     },
+  //   );
 
-    observer.observe(section);
+  //   observer.observe(section);
 
-    return () => {
-      observer.unobserve(section);
-    };
-  }, []);
+  //   return () => {
+  //     observer.unobserve(section);
+  //   };
+  // }, []);
 
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.5]);
 
@@ -55,13 +55,23 @@ const Intro: React.FC<MyComponentProps> = ({ isScrolled, scrollYProgress }) => {
         // isSticky ? "top-0" : "", // Apply top-0 class conditionally
       )}
     >
+      <div
+        data-scroll
+        data-scroll-speed="-.01"
+        id={styles["canvas-container"]}
+        className="absolute right-5 top-0 h-full w-full"
+      >
+        <Suspense fallback={<span>Loading...</span>}>
+          <Spline scene="/assets/intro_blob.spline" />
+        </Suspense>
+      </div>
       <motion.div
         className={cn(styles.intro, "w-full xl:w-auto xl:flex-grow")}
         style={{ scale, clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
       >
         <div className="container flex w-full justify-between font-extralight">
           <h2>[PORTFOLIO]</h2>
-          <h2 className="font-bold uppercase">[Melanie Woe]</h2>
+          <h2 className="font-bold uppercase">Melanie Woe</h2>
           <h2>[2024]</h2>
         </div>
         <h1
@@ -71,18 +81,14 @@ const Intro: React.FC<MyComponentProps> = ({ isScrolled, scrollYProgress }) => {
           data-scroll-direction="horizontal"
         >
           <span className="aalto-opentype text-8xl uppercase text-foreground xl:text-15xl">
-            Frontend
-          </span>
-          <span className="aalto-opentype text-8xl uppercase xl:text-15xl">
-            {" "}
-            <span className="aalto-opentype">Engineer</span>
+            Frontend Engineer
             <span className="text-gradient font-SpaceGrostek">.</span>
           </span>
         </h1>
         <div className="font-semibold">
           <h2>
-            turning coffee into code and code into <span>awesome</span>{" "}
-            websites.
+            turning coffee into code and code into{" "}
+            <span className="font-bold">㋡</span> websites.
           </h2>
         </div>
         <div
@@ -92,17 +98,6 @@ const Intro: React.FC<MyComponentProps> = ({ isScrolled, scrollYProgress }) => {
           <TriangleDownIcon className="mt-1 animate-bounce" />
         </div>
       </motion.div>
-      <div
-        data-scroll
-        data-scroll-speed="-.01"
-        id={styles["canvas-container"]}
-        className="absolute right-5 top-0 h-full w-full"
-      >
-        <Suspense fallback={<span>Loading...</span>}>
-          {/* <Spline scene="/assets/intro_blob.spline" /> */}
-          <Spline scene="https://prod.spline.design/w4fhD6GU53LgSEFU/scene.splinecode" />
-        </Suspense>
-      </div>
     </section>
   );
 };
