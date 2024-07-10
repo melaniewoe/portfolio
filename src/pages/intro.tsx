@@ -99,7 +99,8 @@ const Intro: React.FC<MyComponentProps> = ({ isScrolled, scrollYProgress }) => {
         className="absolute right-5 top-0 h-full w-full"
       >
         <Suspense fallback={<span>Loading...</span>}>
-          <Spline scene="/assets/intro_blob.spline" />
+          {/* <Spline scene="/assets/intro_blob.spline" /> */}
+          <Spline scene="https://prod.spline.design/w4fhD6GU53LgSEFU/scene.splinecode" />
         </Suspense>
       </div>
     </section>

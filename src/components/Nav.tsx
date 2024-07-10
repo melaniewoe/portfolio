@@ -168,7 +168,7 @@ const Nav: React.FC = () => {
               href={link.href}
               text={link.text}
               i={i}
-              className="text-base"
+              className="text-base font-semibold"
             />
           ))}
         </ul>

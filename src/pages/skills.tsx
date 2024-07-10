@@ -24,12 +24,7 @@ const Skills: React.FC = () => {
   return (
     <section className="overflow-hidden" id="home" data-scroll-section>
       <div className="h-full" />
-      <div
-        data-scroll
-        data-scroll-speed=".4"
-        data-scroll-position="top"
-        ref={container}
-      >
+      <div ref={container}>
         <Slide direction="left" left="-1%" progress={scrollYProgress} />
         <Slide direction="right" left="-70%" progress={scrollYProgress} />
         <Slide direction="left" left="-160%" progress={scrollYProgress} />
@@ -219,7 +214,7 @@ const Phrase4: React.FC<PhraseProps> = () => {
           fill
         />
       </span>
-      <p className="md:text-[2.5vw]] text-[8.5vw]">BitBucket</p>
+      <p className="text-[8.5vw] md:text-[2.5vw]">BitBucket</p>
       <span className="relative aspect-[4/2] h-[3.5vw] overflow-hidden rounded-full">
         <Image
           style={{ objectFit: "contain" }}
