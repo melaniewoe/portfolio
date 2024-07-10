@@ -1,7 +1,7 @@
 
 /* hero */
 .intro {
-    @apply container flex flex-col items-center space-y-4 w-full xl:justify-center;
+    @apply container flex flex-col items-center space-y-4 w-full xl:justify-center h-screen;
 }
 /* .pill {
     @apply transition border border-input bg-background flex items-center text-xs px-2.5 py-1.5 rounded-full hover:-translate-y-1 hover:bg-primary hover:text-primary-foreground duration-300;

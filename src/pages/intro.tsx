@@ -41,7 +41,7 @@ const Intro: React.FC<MyComponentProps> = ({ isScrolled, scrollYProgress }) => {
     };
   }, []);
 
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.2]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.5]);
 
   return (
     <section
@@ -51,13 +51,13 @@ const Intro: React.FC<MyComponentProps> = ({ isScrolled, scrollYProgress }) => {
       // add container for blob
       className={cn(
         "relative mt-40 flex h-screen flex-col items-center justify-between xl:mt-0 xl:min-h-screen xl:flex-col",
-        isSticky ? "sticky" : "", // Apply sticky class conditionally
-        isSticky ? "top-0" : "", // Apply top-0 class conditionally
+        // isSticky ? "sticky" : "", // Apply sticky class conditionally
+        // isSticky ? "top-0" : "", // Apply top-0 class conditionally
       )}
     >
       <motion.div
         className={cn(styles.intro, "w-full xl:w-auto xl:flex-grow")}
-        style={{ scale }}
+        style={{ scale, clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
       >
         <div className="container flex w-full justify-between font-extralight">
           <h2>[PORTFOLIO]</h2>
@@ -92,17 +92,16 @@ const Intro: React.FC<MyComponentProps> = ({ isScrolled, scrollYProgress }) => {
           <TriangleDownIcon className="mt-1 animate-bounce" />
         </div>
       </motion.div>
-      <motion.div
+      <div
         data-scroll
         data-scroll-speed="-.01"
         id={styles["canvas-container"]}
         className="absolute right-5 top-0 h-full w-full"
-        style={{ scale }}
       >
         <Suspense fallback={<span>Loading...</span>}>
           <Spline scene="/assets/intro_blob.spline" />
         </Suspense>
-      </motion.div>
+      </div>
     </section>
   );
 };

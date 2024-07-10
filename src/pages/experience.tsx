@@ -1,17 +1,6 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
 import styles from "@/styles/Experience.module.css";
 import ExperienceModal from "@/components/ExperienceModal";
-
-type ExperienceItemProps = {
-  index: number;
-  title: string;
-  company: string;
-  timeline: string;
-  setModal: React.Dispatch<
-    React.SetStateAction<{ active: boolean; index: number }>
-  >;
-};
 
 const experienceList = [
   {
@@ -107,7 +96,6 @@ const ExperienceItem: React.FC<{
     </div>
   );
 };
-
 const Experience: React.FC = () => {
   const [modal, setModal] = useState({ active: false, index: 0 });
 

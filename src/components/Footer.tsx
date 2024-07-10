@@ -72,7 +72,9 @@ export default function Footer() {
                 <p>designed</p> <p>and</p>
                 <p>developed</p> by melanie woe.
               </div>
-              <div className="font-thin">© 2024 Melanie Woe</div>
+              <div className="font-thin text-gradient-primary">
+                © 2024 Melanie Woe
+              </div>
             </div>
           </div>
         </div>

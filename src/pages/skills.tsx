@@ -22,15 +22,20 @@ const Skills: React.FC = () => {
   });
 
   return (
-    <main className="overflow-hidden">
+    <section className="overflow-hidden" id="home" data-scroll-section>
       <div className="h-full" />
-      <div ref={container}>
+      <div
+        data-scroll
+        data-scroll-speed=".4"
+        data-scroll-position="top"
+        ref={container}
+      >
         <Slide direction="left" left="-1%" progress={scrollYProgress} />
         <Slide direction="right" left="-70%" progress={scrollYProgress} />
         <Slide direction="left" left="-160%" progress={scrollYProgress} />
       </div>
       <div className="h-full" />
-    </main>
+    </section>
   );
 };
 
@@ -57,8 +62,8 @@ const Slide: React.FC<SlideProps> = ({ direction, left, progress }) => {
 
 const Phrase: React.FC<PhraseProps> = () => {
   return (
-    <div className="flex items-center gap-4 px-5">
-      <p className="md:text-[3.5vw]">React.js</p>
+    <div className="flex items-center gap-8 px-5">
+      <p className="text-[8.5vw] md:text-[2.5vw]">React.js</p>
       <span className="relative aspect-[4/2] h-[3.5vw] overflow-hidden rounded-full">
         <Image
           style={{ objectFit: "contain" }}
@@ -67,7 +72,7 @@ const Phrase: React.FC<PhraseProps> = () => {
           fill
         />
       </span>
-      <p className="md:text-[3.5vw]">Javascript</p>
+      <p className="text-[8.5vw] md:text-[2.5vw]">Javascript</p>
       <span className="relative aspect-[4/2] h-[3.5vw] overflow-hidden rounded-full">
         <Image
           style={{ objectFit: "contain" }}
@@ -76,7 +81,7 @@ const Phrase: React.FC<PhraseProps> = () => {
           fill
         />
       </span>
-      <p className="md:text-[3.5vw]">CSS</p>
+      <p className="text-[8.5vw] md:text-[2.5vw]">CSS</p>
       <span className="relative aspect-[4/2] h-[3.5vw] overflow-hidden rounded-full">
         <Image
           style={{ objectFit: "contain" }}
@@ -85,7 +90,7 @@ const Phrase: React.FC<PhraseProps> = () => {
           fill
         />
       </span>
-      <p className="md:text-[3.5vw]">LESS</p>
+      <p className="text-[8.5vw] md:text-[2.5vw]">LESS</p>
       <span className="relative aspect-[4/2] h-[3.5vw] overflow-hidden rounded-full">
         <Image
           style={{ objectFit: "contain" }}
@@ -101,7 +106,7 @@ const Phrase: React.FC<PhraseProps> = () => {
 const Phrase2: React.FC<PhraseProps> = () => {
   return (
     <div className="flex items-center gap-8 px-5">
-      <p className="md:text-[3.5vw]">HTML</p>
+      <p className="text-[8.5vw] md:text-[2.5vw]">HTML</p>
       <span className="relative aspect-[4/2] h-[3.5vw] overflow-hidden rounded-full">
         <Image
           style={{ objectFit: "contain" }}
@@ -110,7 +115,7 @@ const Phrase2: React.FC<PhraseProps> = () => {
           fill
         />
       </span>
-      <p className="md:text-[3.5vw]">jQuery</p>
+      <p className="text-[8.5vw] md:text-[2.5vw]">jQuery</p>
       <span className="relative aspect-[4/2] h-[3.5vw] overflow-hidden rounded-full">
         <Image
           style={{ objectFit: "contain" }}
@@ -119,7 +124,7 @@ const Phrase2: React.FC<PhraseProps> = () => {
           fill
         />
       </span>
-      <p className="md:text-[3.5vw]">AJAX</p>
+      <p className="text-[8.5vw] md:text-[2.5vw]">AJAX</p>
       <span className="relative aspect-[4/2] h-[3.5vw] overflow-hidden rounded-full">
         <Image
           style={{ objectFit: "contain" }}
@@ -128,7 +133,7 @@ const Phrase2: React.FC<PhraseProps> = () => {
           fill
         />
       </span>
-      <p className="md:text-[3.5vw]">Boostrap</p>
+      <p className="text-[8.5vw] md:text-[2.5vw]">Boostrap</p>
       <span className="relative aspect-[4/2] h-[3.5vw] overflow-hidden rounded-full">
         <Image
           style={{ objectFit: "contain" }}
@@ -137,7 +142,7 @@ const Phrase2: React.FC<PhraseProps> = () => {
           fill
         />
       </span>
-      <p className="md:text-[3.5vw]">Webpack</p>
+      <p className="text-[8.5vw] md:text-[2.5vw]">Webpack</p>
       <span className="relative aspect-[4/2] h-[3.5vw] overflow-hidden rounded-full">
         <Image
           style={{ objectFit: "contain" }}
@@ -146,7 +151,7 @@ const Phrase2: React.FC<PhraseProps> = () => {
           fill
         />
       </span>
-      <p className="text-[3.5vw]">Figma</p>
+      <p className="text-[8.5vw] md:text-[2.5vw] ">Figma</p>
       <span className="relative aspect-[4/2] h-[3.5vw] overflow-hidden rounded-full">
         <Image
           style={{ objectFit: "contain" }}
@@ -162,7 +167,7 @@ const Phrase2: React.FC<PhraseProps> = () => {
 const Phrase3: React.FC<PhraseProps> = () => {
   return (
     <div className="flex items-center gap-8 px-5">
-      <p className="md:text-[3.5vw]">Git</p>
+      <p className="text-[8.5vw] md:text-[2.5vw]">Git</p>
       <span className="relative aspect-[4/2] h-[3.5vw] overflow-hidden rounded-full">
         <Image
           style={{ objectFit: "contain" }}
@@ -171,7 +176,7 @@ const Phrase3: React.FC<PhraseProps> = () => {
           fill
         />
       </span>
-      <p className="md:text-[3.5vw]">Jira</p>
+      <p className="text-[8.5vw] md:text-[2.5vw]">Jira</p>
       <span className="relative aspect-[4/2] h-[3.5vw] overflow-hidden rounded-full">
         <Image
           style={{ objectFit: "contain" }}
@@ -180,7 +185,7 @@ const Phrase3: React.FC<PhraseProps> = () => {
           fill
         />
       </span>
-      <p className="md:text-[3.5vw]">C#</p>
+      <p className="text-[8.5vw] md:text-[2.5vw]">C#</p>
       <span className="relative aspect-[4/2] h-[3.5vw] overflow-hidden rounded-full">
         <Image
           style={{ objectFit: "cover" }}
@@ -193,14 +198,19 @@ const Phrase3: React.FC<PhraseProps> = () => {
   );
 };
 
-const Phrase4: React.FC<PhraseProps> = ({ src }) => {
+const Phrase4: React.FC<PhraseProps> = () => {
   return (
     <div className="flex items-center gap-8 px-5">
-      <p className="md:text-[3.5vw]">REST</p>
+      <p className="text-[8.5vw] md:text-[2.5vw]">REST</p>
       <span className="relative aspect-[4/2] h-[3.5vw] overflow-hidden rounded-full">
-        <Image style={{ objectFit: "cover" }} src={src} alt="image" fill />
+        <Image
+          style={{ objectFit: "contain" }}
+          src="/skillIcons/rest.png"
+          alt="image"
+          fill
+        />
       </span>
-      <p className="md:text-[3.5vw]">Github</p>
+      <p className="text-[8.5vw] md:text-[2.5vw]">Github</p>
       <span className="relative aspect-[4/2] h-[3.5vw] overflow-hidden rounded-full">
         <Image
           style={{ objectFit: "contain" }}
@@ -209,7 +219,7 @@ const Phrase4: React.FC<PhraseProps> = ({ src }) => {
           fill
         />
       </span>
-      <p className="md:text-[3.5vw]]">BitBucket</p>
+      <p className="md:text-[2.5vw]] text-[8.5vw]">BitBucket</p>
       <span className="relative aspect-[4/2] h-[3.5vw] overflow-hidden rounded-full">
         <Image
           style={{ objectFit: "contain" }}
@@ -218,9 +228,9 @@ const Phrase4: React.FC<PhraseProps> = ({ src }) => {
           fill
         />
       </span>
-      <p className="md:text-[3.5vw]">Front End Developer</p>
+      <p className="text-[8.5vw] md:text-[2.5vw]">Front End Developer</p>
       <span className="relative aspect-[4/2] h-[3.5vw] overflow-hidden rounded-full">
-        <Image style={{ objectFit: "cover" }} src={src} alt="image" fill />
+        {/* <Image style={{ objectFit: "cover" }} alt="image" fill /> */}
       </span>
     </div>
   );
