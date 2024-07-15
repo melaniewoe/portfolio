@@ -71,7 +71,7 @@ const Intro: React.FC<MyComponentProps> = ({ isScrolled, scrollYProgress }) => {
       >
         <div className="container flex w-full justify-between font-extralight">
           <h2>[PORTFOLIO]</h2>
-          <h2 className="font-bold uppercase">Melanie Woe</h2>
+          <h2 className="font-bold uppercase">[Melanie Woe]</h2>
           <h2>[2024]</h2>
         </div>
         <h1
