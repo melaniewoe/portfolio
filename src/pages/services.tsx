@@ -23,7 +23,7 @@ const services = [
   {
     service: "SEO Optimization",
     description:
-      "Enhancing your website's visibility in search engines for increased organic traffic.",
+      "Enhancing your website&apos;s visibility in search engines for increased organic traffic.",
     icon: SearchCheck,
   },
   {

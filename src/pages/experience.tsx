@@ -8,7 +8,7 @@ const experienceList = [
     roleTitle: "Senior Frontend Engineer",
     company: "Vail Resorts",
     roleDescription:
-      "Led and maintained essential components of Vail Resorts' ecosystem, collaborating with cross-functional teams to streamline gear reservations and enhance development standards",
+      "Led and maintained essential components of Vail Resorts&apos; ecosystem, collaborating with cross-functional teams to streamline gear reservations and enhance development standards",
     tools: [
       "JavaScript",
       "React",

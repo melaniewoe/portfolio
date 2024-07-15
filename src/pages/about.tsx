@@ -102,17 +102,17 @@ const About: React.FC<MyComponentProps> = ({ scrollYProgress }) => {
           <div className="flex flex-col">
             <div className="font-medium md:mt-10 md:w-4/5">
               Hi, I&apos;m Melanie Woe — a frontend developer with extensive
-              experience in various technologies. I've worked with various
+              experience in various technologies. I&apos;ve worked with various
               companies, contributing to all project phases; from technical
-              assessments and ideation to delivery. I've led development efforts
-              and collaborated with cross-functional teams.
+              assessments and ideation to delivery. I&apos;ve led development
+              efforts and collaborated with cross-functional teams.
             </div>
             <br />
             <div className="md:w-4/5 md:self-end">
-              Besides frontend work, I've also explored backend development,
-              picking up diverse skills. I&apos;m passionate about creating
-              seamless, engaging user experiences and continuously enhancing the
-              digital landscape.
+              Besides frontend work, I&apos;ve also explored backend
+              development, picking up diverse skills. I&apos;m passionate about
+              creating seamless, engaging user experiences and continuously
+              enhancing the digital landscape.
             </div>
             <br />
             <br />
