@@ -11,7 +11,7 @@ import Projects from "./projects";
 import Experience from "./experience";
 
 export default function Home() {
-  const refScrollContainer = useRef(null);
+  const refScrollContainer = useRef<HTMLDivElement>(null);
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
 
   const { scrollYProgress } = useScroll({

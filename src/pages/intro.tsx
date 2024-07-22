@@ -1,46 +1,20 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import { Suspense } from "react";
 import styles from "@/styles/Home.module.css";
 import Spline from "@splinetool/react-spline";
 import { TriangleDownIcon } from "@radix-ui/react-icons";
 import { cn } from "@/lib/utils";
-import { useTransform, MotionValue, motion } from "framer-motion";
+import { useTransform, MotionValue, motion, useScroll } from "framer-motion";
 
 interface MyComponentProps {
   isScrolled: boolean;
   scrollYProgress: MotionValue<number>;
 }
 
-const Intro: React.FC<MyComponentProps> = ({ isScrolled, scrollYProgress }) => {
-  // const [isSticky, setIsSticky] = useState(true);
+const Intro: React.FC<MyComponentProps> = ({ isScrolled }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
-  // useEffect(() => {
-  //   const section = sectionRef.current;
-  //   if (!section) return;
-
-  //   const observer = new IntersectionObserver(
-  //     (entries) => {
-  //       entries.forEach((entry) => {
-  //         if (entry.isIntersecting) {
-  //           setIsSticky(true); // Set sticky to true when section is intersecting
-  //         } else {
-  //           setIsSticky(false); // Set sticky to false when section is not intersecting
-  //         }
-  //       });
-  //     },
-  //     {
-  //       threshold: 0.1, // Adjust this value as needed
-  //     },
-  //   );
-
-  //   observer.observe(section);
-
-  //   return () => {
-  //     observer.unobserve(section);
-  //   };
-  // }, []);
-
+  const { scrollYProgress } = useScroll();
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.5]);
 
   return (
@@ -51,8 +25,6 @@ const Intro: React.FC<MyComponentProps> = ({ isScrolled, scrollYProgress }) => {
       // add container for blob
       className={cn(
         "relative mt-40 flex h-screen flex-col items-center justify-between xl:mt-0 xl:min-h-screen xl:flex-col",
-        // isSticky ? "sticky" : "", // Apply sticky class conditionally
-        // isSticky ? "top-0" : "", // Apply top-0 class conditionally
       )}
     >
       <div
