@@ -114,7 +114,7 @@ const Phrase2: React.FC<PhraseProps> = () => {
       <span className="relative aspect-[4/2] h-[3.5vw] overflow-hidden rounded-full">
         <Image
           style={{ objectFit: "contain" }}
-          src="/skillIcons/jQuery1.png"
+          src="/skillIcons/jquery1.png"
           alt="image"
           fill
         />

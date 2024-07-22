@@ -41,7 +41,7 @@ const Intro: React.FC<MyComponentProps> = ({ isScrolled }) => {
         className={cn(styles.intro, "w-full xl:w-auto xl:flex-grow")}
         style={{ scale, clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
       >
-        <div className="container flex w-full justify-between font-extralight">
+        <div className="container flex w-full justify-between font-normal">
           <h2>[PORTFOLIO]</h2>
           <h2 className="font-bold uppercase">[Melanie Woe]</h2>
           <h2>[2024]</h2>

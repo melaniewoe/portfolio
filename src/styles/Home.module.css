@@ -2,6 +2,7 @@
 /* hero */
 .intro {
     @apply container flex flex-col items-center space-y-4 w-full xl:justify-center h-screen relative;
+    pointer-events: none; /* Disable pointer events for the intro */
 }
 /* .pill {
     @apply transition border border-input bg-background flex items-center text-xs px-2.5 py-1.5 rounded-full hover:-translate-y-1 hover:bg-primary hover:text-primary-foreground duration-300;
@@ -27,8 +28,7 @@
 #canvas-container
 {
     /* xl:w-[690px]  */
-    @apply bg-background min-h-[515px] xl:min-w-[690px] overflow-hidden items-center absolute;
-    /* z-index: -1; */
+    @apply min-h-[515px] xl:min-w-[690px] overflow-hidden items-center absolute;
 
     /* this fixes the overflow:hidden in Chrome/Opera */
     -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);

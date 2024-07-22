@@ -79,7 +79,7 @@ const config = {
         // Aalto: ['Aalto Display', 'sans-serif'],
       },
       fontSize: {
-        '9xl': ['9rem', {}],
+        '9xl': ['8rem', {}],
         '15xl': ['15rem', {
           // lineHeight: '2rem',
         }],
