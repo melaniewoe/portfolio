@@ -12,9 +12,9 @@
     cursor: pointer;
     transition: all 0.2s;
 
-    /* @media (max-width: 767px) {
+    @media (max-width: 1024px) {
       pointer-events: none;
-    } */
+    }
   }
   
   .experience:last-of-type {

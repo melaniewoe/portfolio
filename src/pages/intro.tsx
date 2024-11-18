@@ -66,7 +66,7 @@ const Intro: React.FC<MyComponentProps> = ({ isScrolled }) => {
         <div
           className={cn(styles.scroll, isScrolled && styles["scroll--hidden"])}
         >
-          Scroll to discover{" "}
+          Scroll to learn more about me{" "}
           <TriangleDownIcon className="mt-1 animate-bounce" />
         </div>
       </motion.div>

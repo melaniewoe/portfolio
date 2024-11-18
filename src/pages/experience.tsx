@@ -84,14 +84,12 @@ const ExperienceItem: React.FC<{
       onMouseLeave={() => setModal({ active: false, index })}
       className={styles.experience}
     >
-      <div className="w-full items-center xl:grid xl:grid-cols-12 xl:gap-x-24">
+      <div className="w-full items-center md:grid md:grid-cols-12 xl:gap-x-24">
         <h2 className="relative col-span-10 overflow-hidden text-3xl md:col-span-6">
           {company}
         </h2>
-        <p className="col-span-4 hidden md:block"> {title}</p>
-        <p className="relative col-span-2 hidden text-right md:block">
-          {timeline}
-        </p>
+        <p className="col-span-4"> {title}</p>
+        <p className="relative col-span-2 xl:text-right">{timeline}</p>
       </div>
     </div>
   );
