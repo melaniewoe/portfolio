@@ -44,7 +44,7 @@ const Intro: React.FC<MyComponentProps> = ({ isScrolled }) => {
         <div className="container flex w-full justify-between font-normal">
           <h2>[PORTFOLIO]</h2>
           <h2 className="font-bold uppercase">[Melanie Woe]</h2>
-          <h2>[2024]</h2>
+          <h2>[2025]</h2>
         </div>
         <h1
           data-scroll

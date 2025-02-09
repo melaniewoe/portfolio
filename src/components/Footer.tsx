@@ -73,7 +73,7 @@ export default function Footer() {
                 <p>developed</p> by melanie woe.
               </div>
               <div className="font-normal text-gradient-primary">
-                © 2024 Melanie Woe
+                © 2025 Melanie Woe
               </div>
             </div>
           </div>
